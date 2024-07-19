@@ -49,8 +49,8 @@ The Online Library System is a web application for managing a library. Admins ca
      python manage.py runserver
    ```
 ## Technologies Used:
-   Django: A high-level Python Web framework.
-   Openpyxl: Library for reading/writing Excel files.
+  - Django: A high-level Python Web framework.
+  - Openpyxl: Library for reading/writing Excel files.
 
 
 
