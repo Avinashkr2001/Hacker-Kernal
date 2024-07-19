@@ -14,6 +14,7 @@ The Online Library System is a web application for managing a library. Admins ca
    ```sh
    mkdir online-library-system
    cd online-library-system
+   git clone https://github.com/Avinashkr2001/Hacker-Kernal.git
    ```
    
 2. **Create and activate a virtual environment:**
