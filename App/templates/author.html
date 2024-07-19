@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="outer">
+    <div class="btn">
+        <a href="add_author" class="add-btn">Add Author</a>
+        <a href="export_author_records" class="export-btn">Export</a>
+    </div>
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Bio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td data-label="Id">{{i.id}}</td>
+                    <td data-label="Name">{{i.name}}</td>
+                    <td data-label="Email">{{i.email}}</td>
+                    <td data-label="Bio">{{i.bio}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

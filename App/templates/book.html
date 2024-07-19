@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="outer">
+    <div class="btn">
+        <a href="add_book" class="add-btn">Add Book</a>
+        <a href="export_book_records" class="export-btn">Export</a>
+    </div>
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Published Date</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for book in data %}    
+                <tr>
+                    <td data-label="Id">{{book.id}}</td>
+                    <td data-label="Title">{{book.title}}</td>
+                    <td data-label="Genre">{{book.genre}}</td>
+                    <td data-label="Published Date">{{book.published_date}}</td>
+                    <td data-label="Author">{{book.author}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
