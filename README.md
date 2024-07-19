@@ -25,22 +25,26 @@ The Online Library System is a web application for managing a library. Admins ca
       # On macOS and Linux
       source env/bin/activate
    ```
+3. **Go to Project Directory:**
+   ```sh
+   cd project
+   ```
     
-3. **Install Django and additional dependencies:**
+4. **Install Django and additional dependencies:**
    ```sh
    pip install django
    pip install pandas openpyxl
    ```
 
    
-4. **Initialize Django project:**
+5. **Initialize Django project:**
    ```sh
      python manage.py makemigrations
      python manage.py migrate
      python manage.py createsuperuser
    ```
 
-5. **Start the development server:**
+6. **Start the development server:**
    ```sh
      python manage.py runserver
    ```
