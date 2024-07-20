@@ -15,8 +15,12 @@ The Online Library System is a web application for managing a library. Admins ca
    mkdir online-library-system
    cd online-library-system
    ```
-   
-2. **Create and activate a virtual environment:**
+2. **Clone the Repository**
+   ```sh
+   git clone https://github.com/Avinashkr2001/Hacker-Kernal.git
+   ```
+
+3. **Create and activate a virtual environment:**
    ```sh
       python -m venv env
       # On Windows
@@ -24,25 +28,32 @@ The Online Library System is a web application for managing a library. Admins ca
       # On macOS and Linux
       source env/bin/activate
    ```
+4. **Go to Project Directory:**
+   ```sh
+   cd project
+   ```
     
-3. **Install Django and additional dependencies:**
+5. **Install Django and additional dependencies:**
    ```sh
    pip install django
    pip install pandas openpyxl
    ```
 
    
-4. **Initialize Django project:**
+6. **Initialize Django project:**
    ```sh
      python manage.py makemigrations
      python manage.py migrate
      python manage.py createsuperuser
    ```
 
-5. **Start the development server:**
+7. **Start the development server:**
    ```sh
      python manage.py runserver
    ```
+## Technologies Used:
+  - Django: A high-level Python Web framework.
+  - Openpyxl: Library for reading/writing Excel files.
 
 
 
