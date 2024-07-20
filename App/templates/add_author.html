@@ -4,15 +4,19 @@
     <div class="inner-from">
         <form action="" class="form" method="post">
             {% csrf_token %}
-            {% for i in messages %}
-            <span>
-                {{i}}
-            </span>
-            {% endfor %}
             {{form}}
             <button type="submit">submit</button>
 
         </form>
     </div>
 </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    {% for message in messages %}
+    swal({
+        text: "{{message}}",
+        icon: "{{message.tags}}"
+    });
+    {% endfor %}
+</script>
 {% endblock %}

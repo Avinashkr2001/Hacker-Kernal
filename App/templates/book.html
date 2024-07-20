@@ -18,8 +18,8 @@
                 </tr>
             </thead>
             <tbody>
-                
-                {% for book in data %}    
+
+                {% for book in data %}
                 <tr>
                     <td data-label="Id">{{book.id}}</td>
                     <td data-label="Title">{{book.title}}</td>
@@ -31,5 +31,39 @@
             </tbody>
         </table>
     </div>
+    <div class="pagination_rounded">
+        <ul>
+            <li>
+                <a href="" class="prev"><i class='bx bx-chevron-left'></i>Prev</a>
+            </li>
+            <li>
+                <a href="author_records?page=1" class="ab">1</a>
+            </li>
+            <li>
+                <a href="author_records?page=2" class="ab">2</a>
+            </li>
+            <li>
+                <a href="author_records?page=3" class="ab">3</a>
+            </li>
+            <li>
+                <a href="author_records?page=4" class="ab">4</a>
+            </li>
+            <li>
+                <a href="author_records?page=5" class="ab">5</a>
+            </li>
+            <li>
+                <a href="" class="next">Right<i class='bx bx-chevron-right'></i></a>
+            </li>
+        </ul>
+    </div>
 </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    {% for message in messages %}
+    swal({
+        text: "{{message}}",
+        icon: "{{message.tags}}"
+    });
+    {% endfor %}
+</script>
 {% endblock %}

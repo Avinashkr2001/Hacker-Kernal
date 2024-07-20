@@ -24,9 +24,11 @@ def add_author(request):
             pattern=r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$'
             if re.match(pattern,email):
                 Author.objects.create(name=name,email=email,bio=bio)
+                messages.success(request,'Author Added Successfully')
                 return redirect('home')
             else:
-                messages.error(request,'Inavlid Email')
+                messages.error(request,'Please Enter valid Email')
+                return
     else:
         form=author_form()
     return render(request,'add_author.html',{'form':form})
@@ -41,6 +43,7 @@ def add_book(request):
             author_id=form.cleaned_data['author']
             author=get_object_or_404(Author,id=author_id)
             Book.objects.create(title=title,genre=genre,published_date=published_date,author=author)
+            messages.success(request,'Book Added Successfully')
             return redirect('books')
     else:
         form=book_form()
@@ -55,6 +58,7 @@ def add_record(request):
             book_id=form.cleaned_data['book']
             book=get_object_or_404(Book,id=book_id)
             BorrowRecord.objects.create(user_name=user_name,borrow_date=borrow_date,return_date=return_date,book=book)
+            messages.success(request,'Record Added Successfully')
             return redirect('records')
     else:
         form=record_form()
