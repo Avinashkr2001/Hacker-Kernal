@@ -192,6 +192,8 @@ span {
     border-radius: 50%;
     border: 1px solid #ccc;
     text-decoration: none;
+    color: #4285f4;
+    font-weight: bold;
 }
 
 .pagination_rounded li .ab:hover {

@@ -33,27 +33,22 @@
     </div>
     <div class="pagination_rounded">
         <ul>
+            {% if data.has_previous %}
             <li>
-                <a href="" class="prev"><i class='bx bx-chevron-left'></i>Prev</a>
+                <a href='?page={{data.previous_page_number}}' class="prev"><i class='bx bx-chevron-left'></i>Prev</a>
             </li>
+            {% endif %}
+
+            {% for i in page %}
             <li>
-                <a href="author_records?page=1" class="ab">1</a>
+                <a href="?page={{i}}" class="ab">{{i}}</a>
             </li>
+            {% endfor %}
+            {% if data.has_next %}
             <li>
-                <a href="author_records?page=2" class="ab">2</a>
+                <a href="?page={{data.next_page_number}}" class="next">Next<i class='bx bx-chevron-right'></i></a>
             </li>
-            <li>
-                <a href="author_records?page=3" class="ab">3</a>
-            </li>
-            <li>
-                <a href="author_records?page=4" class="ab">4</a>
-            </li>
-            <li>
-                <a href="author_records?page=5" class="ab">5</a>
-            </li>
-            <li>
-                <a href="" class="next">Right<i class='bx bx-chevron-right'></i></a>
-            </li>
+            {% endif %}
         </ul>
     </div>
 </div>

@@ -2,18 +2,34 @@ from django.shortcuts import get_object_or_404, render,redirect,HttpResponse
 from .forms import author_form,book_form,record_form
 from .models import Author,Book,BorrowRecord
 from django.contrib import messages
+from django .core.paginator import Paginator
 import pandas as pd
 import re
 
 def home(request):
-    data=Author.objects.all()
-    return render(request,'author.html',{'data':data})
+    all_data=Author.objects.all()
+    paginator=Paginator(all_data,10)
+    page_number=request.GET.get('page')
+    data=paginator.get_page(page_number)
+    total_page=data.paginator.num_pages
+    list=[n+1 for n in range(total_page)]
+    return render(request,'author.html',{'data':data,'page':list})
 def books(request):
-    data=Book.objects.all()
-    return render(request,'book.html',{'data':data})
+    all_data=Book.objects.all()
+    paginator=Paginator(all_data,10)
+    page_number=request.GET.get('page')
+    data=paginator.get_page(page_number)
+    total_page=data.paginator.num_pages
+    list=[n+1 for n in range(total_page)]
+    return render(request,'book.html',{'data':data,'page':list})
 def records(request):
-    data=BorrowRecord.objects.all()
-    return render(request,'record.html',{'data':data})
+    all_data=BorrowRecord.objects.all()
+    paginator=Paginator(all_data,10)
+    page_number=request.GET.get('page')
+    data=paginator.get_page(page_number)
+    total_page=data.paginator.num_pages
+    list=[n+1 for n in range(total_page)]
+    return render(request,'record.html',{'data':data,'page':list})
 def add_author(request):
     if request.method == 'POST':
         form = author_form(request.POST)
