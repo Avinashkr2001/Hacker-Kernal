@@ -31,8 +31,7 @@ def add_author(request):
                 return
     else:
         form=author_form()
-    return render(request,'add_author.html',{'form':form})
-        
+    return render(request,'add_author.html',{'form':form})      
 def add_book(request):
     if request.method=='POST':
         form=book_form(request.POST)
